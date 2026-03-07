@@ -1,0 +1,16 @@
+*, 
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* styles.css */
+:root {
+    /* Make base background a soft purple-ish */
+    background-color: white;
+  }
