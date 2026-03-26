@@ -1,7 +1,6 @@
 package com.thatsnotrlght.interview_radar.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.thatsnotrlght.interview_radar.dto.CompanyDashboardDTO;
 import com.thatsnotrlght.interview_radar.model.Company;
+import com.thatsnotrlght.interview_radar.model.Review;
 import com.thatsnotrlght.interview_radar.repository.CompanyRepository;
+import com.thatsnotrlght.interview_radar.repository.ReviewRepository;
 import com.thatsnotrlght.interview_radar.service.GhostService;
 
 @RestController
@@ -25,6 +27,9 @@ public class CompanyController {
 	
 	@Autowired
     private CompanyRepository companyRepository;
+
+	@Autowired
+    private ReviewRepository reviewRepository;
 
     // This is the "URL" you will visit in your browser
 //    @GetMapping("/{id}")
@@ -40,8 +45,34 @@ public class CompanyController {
 //    }
     
     @GetMapping
-    public List<Company> getAllCompanies() {
-    	return companyRepository.findAll();
+    public List<CompanyDashboardDTO> getAllCompanies() {
+    	return companyRepository.findAll().stream()
+    			.map(company -> {
+    				List<Review> reviews = reviewRepository.findByCompanyId(company.getId());
+    				double ghostScore = ghostService.calculateGhostProbability(reviews);
+    				double ghostingRatePercent = ghostScore * 100.0;
+    				double avgResponseDays = ghostService.calculateAverageResponseDays(reviews);
+    				double responseRatePercent = ghostService.calculateResponseRatePercent(reviews);
+    				double positiveRatePercent = ghostService.calculatePositiveRatePercent(reviews);
+
+    				String processLabel = ghostScore <= 0.2 ? "Ghost-Safe"
+    						: ghostScore <= 0.5 ? "So-So"
+    						: "Ghost Risk";
+
+    				return new CompanyDashboardDTO(
+    						company.getId(),
+    						company.getName(),
+    						company.getWebsiteUrl(),
+    						ghostScore,
+    						reviews.size(),
+    						ghostingRatePercent,
+    						avgResponseDays,
+    						responseRatePercent,
+    						positiveRatePercent,
+    						processLabel
+    				);
+    			})
+    			.toList();
     }
     
     @PostMapping

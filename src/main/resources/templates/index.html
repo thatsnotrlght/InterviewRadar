@@ -1,444 +1,264 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <title>InterviewRadar Dashboard</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+	<title>InterviewRadar Dashboard</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="styles.css">
 </head>
-<body class="container mt-5 bg-white">
-
+<body class="test container mt-5 bg-white">
 	<header>
-		<div class="navbar shadow-sm">
-			<!-- Logo/Brand (Left side) -->
+		<div class="navbar shadow-md">
 			<div class="navbar-start">
-				<!-- Mobile hamburger menu -->
-				<div class="dropdown">
-					<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-						</svg>
-					</div>
-					<!-- Mobile dropdown menu -->
-					<ul tabindex="0" class="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow">
-						<li><a href="#">Companies</a></li>
-						<li><a href="#">How it works</a></li>
-						<li><a href="#" class="text-primary font-semibold">Write a Review</a></li>
-						<li><a href="#">Login/Register</a></li>
-					</ul>
-				</div>
-				<!-- Logo -->
-				<a href="/" class="btn btn-ghost text-xl font-bold">IR.</a>
-			
-					<!-- Center navigation (Desktop only) -->
-				<ul class="menu menu-horizontal px-1">
-					<li><a href="#">Companies</a></li>
-					<li><a href="#">How it works</a></li>
-				</ul>
+				<a href="/" class="btn btn-ghost text-xl font-bold hover:text-[#5B4CDB]">IR.</a>
 			</div>
-			
-			<!-- Center navigation (Desktop only) -->
-			<div class="navbar-start hidden lg:flex">
-
-			</div>
-			
-			<!-- Right side buttons (Desktop) -->
 			<div class="navbar-end gap-2">
-				<a href="#" class="btn btn-primary hidden lg:flex">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-					</svg>
+				<button id="open-review-btn" class="btn btn-primary bg-transparent border border-[#9C9FFF] text-[#7C63F7]">
 					Write a Review
-				</a>
-				<button class="btn btn-ghost btn-circle hidden lg:flex">
-					<!-- Bell icon for notifications -->
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-					</svg>
-				</button>
-				<button class="btn btn-ghost btn-circle hidden lg:flex">
-					<!-- User icon -->
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-					</svg>
 				</button>
 			</div>
 		</div>
 	</header>
 
-			<!-- End of desktop navigation menu-->
-	<section class="hero mt-10 rounded-3xl shadow-md">
+	<section class="hero mt-0.5 shadow-sm bg-gradient-to-tl from-[#EBEDFC] to-[#F8F5FF]">
 		<div class="hero-content flex-col lg:flex-row gap-10 lg:gap-16 px-6 py-10 lg:px-12 lg:py-14">
-			<!-- Left: icon/image block -->
-			<div class="w-full max-w-sm">
-			<img src="images/test.png" alt="Interview process icons" class="w-full rounded-3xl shadow-xl" />
-			</div>
-		
-			<!-- Right: text content -->
 			<div class="w-full max-w-xl space-y-6">
-				<div class="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 text-xs font-medium text-purple-700">
+				<div class="inline-flex border border-[#9C9FFF] items-center gap-2 rounded-full bg-[#D6D8FF] px-4 py-2 text-xs font-medium text-[#7C63F7]">
 					<span class="text-[10px] font-semibold tracking-wide">NEW</span>
 					<span class="h-1 w-1 rounded-full bg-purple-400"></span>
 					<span>Anonymous hiring process reviews</span>
 				</div>
-			
-				<h1 class="text-3xl lg:text-5xl font-extrabold leading-tight">
-					Find companies that respect your time
+				<h1 class="text-3xl text-[#0a0a0a] lg:text-4xl font-extrabold leading-tight">
+					Track companies on your <span class="text-[#7C63F7]">interview radar</span>
 				</h1>
-			
-				<p class="text-sm lg:text-base text-base-content/70 max-w-xl">
+				<p class="text-sm lg:text-base text-base-content/100 max-w-xl">
 					Interview Radar tracks how companies treat job applicants. Search reviews, check Ghost Scores, and make informed decisions before applying.
-				</p>		
+				</p>
 			</div>
 		</div>
 	</section>
-			<!-- <div class="hero-section">
-				
-				<div class="left">
-					<img src="images/test.png" alt="">
-				</div>
 
-				<div class="right">
-					<p class="ghost-tag">Anonymous hiring process reviews</p>
+	<section class="mt-12 ml-4 mr-4 space-y-6">
+		<div class="flex items-center justify-between">
+			<h2 class="text-2xl text-[#0a0a0a] font-semibold">Explore companies</h2>
+			<p id="companies-meta" class="text-sm text-base-content/70">Loading companies...</p>
+		</div>
 
-					<h1>Find companies that respect your time</h1>
+		<div id="companies-error" class="hidden alert alert-error">
+			<span>Unable to load companies right now.</span>
+		</div>
 
-					<p>
-						Navigating the tech recruitment 'black hole' shouldn't feel like a
-						guessing game. This platform allows students to track ghosting trends and 
-						share role specific interview insights at top tech firms.
-					</p>
+		<div id="companiesContainer" class="space-y-4">
+		</div>
+	</section>
 
-					<a href="#" class="btn review">Write a review</a>
-				</div>
-			</div>
-		</div> -->
-
-	<!-- End of the header section-->
-
-	<section class="mt-10">
-		<div class="card shadow-sm border border-base-200 rounded-2xl">
-		  <div class="card-body gap-4 lg:flex lg:items-center lg:justify-between">
-			<div class="space-y-1">
-			  <p class="text-sm text-base-content/60">Have an employer in mind?</p>
-			  <!-- <p class="text-base font-medium text-base-content/80">
-				Search for a company to see its Ghost Score.
-			  </p> -->
-			</div>
-	  
-			<form class="w-full max-w-xl" method="get">
-			  <label class="input input-bordered input-lg flex items-center gap-3 rounded-full">
-				<!-- Search icon -->
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 opacity-60">
-				  <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-						d="M21 21l-4.35-4.35m1.1-5.4A7.25 7.25 0 1110.5 3.25a7.25 7.25 0 017.25 7.25z" />
-				</svg>
-	  
-				<input
-				  type="search"
-				  id="company-search"
-				  name="q"
-				  placeholder="Search for a company..."
-				  class="grow min-w-0"
-				/>
-	  
-				<button type="submit" class="btn btn-primary btn-sm rounded-full normal-case">
-				  Search
-				</button>
-			  </label>
+	<dialog id="reviews-modal" class="modal">
+		<div class="modal-box max-w-3xl">
+			<form method="dialog">
+				<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">X</button>
 			</form>
-		  </div>
-		</div>
-	  </section>
-	<!-- <div class="company-search">
-		<div class="text-search">Have an employer in mind?</div>
-		<input type="search" id="company-search" placeholder="Search for a company...">
-		<button type="submit">Search</button>
-	</div> -->
-
-	<!-- End of search section-->
-
-	<section class="mt-12 space-y-6 bg-blue-500">
-		<!-- Top header row -->
-		<div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-		  <div>
-			<h2 class="text-2xl font-semibold">Explore companies</h2>
-			<p class="text-sm text-base-content/60">
-			  <span th:text="${companies.size()}">8</span> companies ·
-			  <span>2,807</span> total reviews
-			</p>
-		  </div>
-	  
-		  <div class="flex items-center gap-3">
-			<!-- Layout toggle icon (just visual for now) -->
-			<button class="btn btn-ghost btn-sm btn-circle">
-			  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-				<path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-					  d="M4 6h16M4 12h16M4 18h10" />
-			  </svg>
-			</button>
-	  
-			<!-- Sort dropdown -->
-			<div class="dropdown dropdown-end">
-			  <label tabindex="0" class="btn btn-sm rounded-full normal-case gap-1">
-				Best Ghost Score
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
-				  <path fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
-						clip-rule="evenodd" />
-				</svg>
-			  </label>
-			  <ul tabindex="0" class="dropdown-content menu bg-white rounded-box shadow w-52 mt-2">
-				<li><a>Best Ghost Score</a></li>
-				<li><a>Most reviewed</a></li>
-				<li><a>Newest reviews</a></li>
-			  </ul>
-			</div>
-		  </div>
-		</div>
-
-		<!-- Ghost tier filter row -->
-		<div class="flex flex-wrap items-center gap-3 bg-red-500">
-			<span class="text-[10px] text-base-content/60">Filter by Ghost tier:</span>
-		
-			<!-- Active pill -->
-			<button class="btn btn-sm rounded-full btn-active normal-case">
-			  All companies
-			  <span class="badge badge-neutral ml-1" th:text="${companies.size()}">8</span>
-			</button>
-		
-			<!-- Ghost-Safe -->
-			<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 hover:bg-green-100 text-xs shadow-sm">
-			  <span>Ghost-Safe</span>
-			  <span class="flex items-center justify-center w-5 h-5 text-[10px] font-bold bg-green-200 rounded-full">3</span>
-			</button>
-		
-			<!-- So-So -->
-			<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-amber-200 bg-amber-50 text-amber-600 hover:bg-amber-100 text-xs shadow-sm">
-			  <span>So-So</span>
-			  <span class="flex items-center justify-center w-5 h-5 text-[10px] font-bold bg-amber-200 rounded-full">3</span>
-			</button>
-		
-			<!-- Ghost Risk -->
-			<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100 text-xs shadow-sm">
-			  <span>Ghost Risk</span>
-			  <span class="flex items-center justify-center w-5 h-5 text-[10px] font-bold bg-rose-200 rounded-full">2</span>
-			</button>
-		</div>
-
-		<!-- Industry + size filters row -->
-		<div class="flex flex-wrap items-center gap-3">
-			<!-- Industries as pills -->
-			<button class="btn btn-sm rounded-full btn-active normal-case">
-			  All Industries
-			  <span class="badge badge-neutral ml-1">8</span>
-			</button>
-		
-			<button class="btn btn-sm rounded-full border border-black btn-ghost normal-case">Technology</button>
-			<button class="btn btn-sm rounded-full border border-black btn-ghost normal-case">Software</button>
-			<button class="btn btn-sm rounded-full border border-black btn-ghost normal-case">Finance</button>
-			<button class="btn btn-sm rounded-full border border-black btn-ghost normal-case">Design</button>
-			<button class="btn btn-sm rounded-full border border-black btn-ghost normal-case">Retail</button>
-		
-			<!-- Push size selector to the right on large screens -->
-			<div class="ml-auto">
-			  <select class="select select-sm rounded-full bg-white border-base-300 w-40">
-				<option selected>All sizes</option>
-				<option>1-50 employees</option>
-				<option>51-200 employees</option>
-				<option>201-1000 employees</option>
-				<option>1000+ employees</option>
-			  </select>
-			</div>
-		</div>
-		  <!-- Companies list -->
-		<div class="space-y-4">
-			<article
-			  class="card bg-white shadow-sm border border-base-200 rounded-2xl"
-			  th:each="company : ${companies}"
-			>
-			  <div class="card-body flex flex-col gap-4 md:flex-row md:items-start">
-				<!-- Optional company image placeholder -->
-				<div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-base-200 flex-shrink-0"></div>
-				<!-- Main info -->
-				<div class="flex-1 space-y-2">
-				  <div class="flex flex-wrap items-center justify-between gap-2">
-					<div>
-					  <h3 class="font-semibold text-base lg:text-lg" th:text="${company.name}">
-						Company Name
-					  </h3>
-					  <p class="text-xs text-base-content/60">
-						<span>Location</span> · <span>20-50 employees</span> · <span>Industry</span>
-					  </p>
-					</div>
-					<!-- Score + tag -->
-					<div class="flex items-center gap-2">
-					  <span class="badge badge-lg rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-						<span class="font-semibold">
-						  <!-- example: convert ghostScore to a 0–10 score; adjust formula as you like -->
-						  <span th:text="${#numbers.formatDecimal((1 - company.ghostScore) * 10, 1, 1)}">9.1</span>
-						</span>
-					  </span>
-					  <span class="badge badge-sm rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-						Best process
-					  </span>
-					</div>
-				  </div>
-				  <p class="text-sm text-base-content/80">
-					A short sentence about this company’s candidate experience goes here.
-				  </p>
-				  <div class="flex flex-wrap items-center gap-4 text-xs text-base-content/60">
-					<span><span class="font-semibold">67</span> reviews</span>
-					<span><span class="font-semibold">2d</span> avg response</span>
-					<span><span class="font-semibold">95%</span> response rate</span>
-					<span><span class="font-semibold">91%</span> positive</span>
-				  </div>
-				</div>
-				<!-- Call-to-action -->
-				<div class="md:self-stretch md:flex md:items-center">
-				  <a
-					th:href="@{/company/{id}(id=${company.id})}"
-					class="btn btn-sm btn-outline rounded-full normal-case"
-				  >
-					View process reviews
-				  </a>
-				</div>
-			  </div>
-			</article>
-		</div
-	</section>
-	
-	
-
-	<!-- <section class="companies-section">
-		<div class="explore-companies_header">
-			<div class="left">
-				<h2>Explore companies</h2>
-				<p># companies</p>
-				<p>#### total reviews</p>
-			</div>
-
-			<div class="right">
-
-				<select>
-					<option value="best">Best Ghost Score</option>
-				</select>
-			</div>
-		</div>
-
-		<div class="filters">
-			<div class="ghost-tier">
-				<button>All companies #</button>
-			</div>
-			<div class="industries-filter">
-				<button>All Industries #</button>
-			</div>
-		</div>
-
-		<div class="companies-list">
-
-		</div>
-
-		<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 hover:bg-green-100 transition shadow-sm">
-			<span>🛡️ Ghost-Safe</span>
-			<span class="flex items-center justify-center w-5 h-5 text-xs font-bold bg-green-200 rounded-full" 
-				  th:text="${companies.size()}">3</span>
-		</button>
-		
-		<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-orange-100 bg-orange-50 text-orange-600 hover:bg-orange-100 transition shadow-sm">
-			<span>⚡ So-So</span>
-			<span class="flex items-center justify-center w-5 h-5 text-xs font-bold bg-orange-200 rounded-full">3</span>
-		</button>
-	</section> -->
-
-	<!-- <section class="companies-section">
-		<div class="left">
-			<div class="filter-companies">
-				<div class="industry">
-					<p>industry</p>
-					<select name="industries_list" id="industries">
-						<option value="blah">blah</option>
+			<h3 id="reviews-title" class="text-lg font-bold">Company reviews</h3>
+			<div id="reviews-list" class="mt-4 space-y-3"></div>
+			<h4 class="mt-6 mb-2 font-semibold">Add review</h4>
+			<form id="review-form" class="space-y-3">
+				<input type="hidden" id="review-company-id" />
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+					<input id="review-rating" type="number" min="1" max="5" class="input input-bordered w-full" placeholder="Rating 1-5" required />
+					<select id="review-ghosted" class="select select-bordered w-full">
+						<option value="false">Received response</option>
+						<option value="true">Ghosted</option>
 					</select>
 				</div>
-				<div class="company-size">
-					<p>Company Size</p>
-					<select name="size_list" id="sizes">
-						<option value="bleh">bleh</option>
-					</select>
+				<input id="review-experience" class="input input-bordered w-full" placeholder="Interview experience (e.g. Onsite, OA)" />
+				<textarea id="review-feedback" class="textarea textarea-bordered w-full" placeholder="Feedback" required></textarea>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+					<input id="review-application-date" type="date" class="input input-bordered w-full" />
+					<input id="review-last-contact-date" type="date" class="input input-bordered w-full" />
 				</div>
-			</div>
+				<button class="btn btn-primary bg-[#7C63F7] border-[#7C63F7] text-white" type="submit">Submit review</button>
+			</form>
 		</div>
-		<div class="right">
-			
-		</div>
-	</section> -->
+	</dialog>
 
-	<!-- End of Comapnies section -->
-
-	<footer>
-		<div class="wrapper">
-			<div class="links-container">
-				<div class="links">
-					<h3>Quick links</h3>
-
-					<ul>
-						<li>
-							<a href="#">About us</a>
-						</li>
-						<li>
-							<a href="#">Contact us</a>
-						</li>
-						<li>
-							<a href="#">Privacy Policy</a>
-						</li>
-						<li>
-							<a href="#">Terms & Conditions</a>
-						</li>
-					</ul>
-				</div>
-				<div class="links">
-					<h3>Blah blahs</h3>
-
-					<ul>
-						<li>
-							<a href="#">oof</a>
-						</li>
-						<li>
-							<a href="#">bruh</a>
-						</li>
-						<li>
-							<a href="#">yuh</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+	<footer class="p-10 bg-white border border-top-1 border-[#9C9FFF] mt-8">
+		<div class="flex flex-col md:flex-row items-start gap-12">
+			<aside>
+				<p>© 2026 InterviewRadar. All rights reserved.</p>
+			</aside>
 		</div>
 	</footer>
 
-    <div class="row">
-	    <div class="col-md-4 mb-4" th:each="company : ${companies}">
-	        <div class="card h-100 shadow-sm border-0">
-	            <div class="card-body">
-	                <div class="d-flex justify-content-between align-items-start">
-	                    <h5 class="card-title fw-bold" th:text="${company.name}">Company Name</h5>
-	                    <span class="badge rounded-pill" 
-	                          th:classappend="${company.ghostScore > 0.5} ? 'bg-danger' : 'bg-success'"
-	                          th:text="${#numbers.formatPercent(company.ghostScore, 1, 0)}">
-	                    </span>
-	                </div>
-	                <h6 class="text-muted mb-3" th:text="${company.websiteUrl}">website.com</h6>
-	                
-	                <p class="card-text small">
-	                    <strong>Top Roles:</strong> SWE, QA, Data Science
-	                </p>
-	                
-	                <a th:href="@{/company/{id}(id=${company.id})}" class="btn btn-outline-primary btn-sm w-100">
-	                    View Process Reviews
-	                </a>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+	<script>
+		const companiesContainer = document.getElementById("companiesContainer");
+		const companiesMeta = document.getElementById("companies-meta");
+		const companiesError = document.getElementById("companies-error");
+		const reviewsModal = document.getElementById("reviews-modal");
+		const reviewsTitle = document.getElementById("reviews-title");
+		const reviewsList = document.getElementById("reviews-list");
+		const reviewForm = document.getElementById("review-form");
+		const reviewCompanyIdInput = document.getElementById("review-company-id");
+		const openReviewButton = document.getElementById("open-review-btn");
+
+		let cachedCompanies = [];
+
+		document.addEventListener("DOMContentLoaded", async () => {
+			await loadCompanies();
+		});
+
+		openReviewButton.addEventListener("click", () => {
+			if (!cachedCompanies.length) {
+				return;
+			}
+			openReviewsForCompany(cachedCompanies[0].id, cachedCompanies[0].name);
+		});
+
+		reviewForm.addEventListener("submit", async (event) => {
+			event.preventDefault();
+			const companyId = reviewCompanyIdInput.value;
+			if (!companyId) {
+				return;
+			}
+			const payload = {
+				rating: Number(document.getElementById("review-rating").value),
+				interviewExperience: document.getElementById("review-experience").value,
+				feedback: document.getElementById("review-feedback").value,
+				applicationDate: document.getElementById("review-application-date").value || null,
+				lastContactDate: document.getElementById("review-last-contact-date").value || null,
+				isGhosted: document.getElementById("review-ghosted").value === "true"
+			};
+			const response = await fetch(`/api/companies/${companyId}/reviews`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(payload)
+			});
+			if (!response.ok) {
+				alert("Could not submit review.");
+				return;
+			}
+			reviewForm.reset();
+			await openReviewsForCompany(companyId, reviewsTitle.textContent.replace("Reviews: ", ""));
+			await loadCompanies();
+		});
+
+		async function loadCompanies() {
+			companiesError.classList.add("hidden");
+			companiesContainer.innerHTML = "<div class='text-sm text-base-content/60'>Loading...</div>";
+			try {
+				const response = await fetch("/api/companies");
+				if (!response.ok) {
+					throw new Error(`Failed to fetch companies: ${response.status}`);
+				}
+				const companies = await response.json();
+				cachedCompanies = companies;
+				renderCompanies(companies);
+			} catch (error) {
+				console.error(error);
+				companiesContainer.innerHTML = "";
+				companiesError.classList.remove("hidden");
+				companiesMeta.textContent = "Error loading data";
+			}
+		}
+
+		function renderCompanies(companies) {
+			companiesMeta.textContent = `${companies.length} companies`;
+			if (!companies.length) {
+				companiesContainer.innerHTML = "<p>No companies yet.</p>";
+				return;
+			}
+			companiesContainer.innerHTML = companies.map((company) => {
+				return `
+					<article class="card bg-white shadow-sm hover:shadow-md transition-all duration-200">
+						<div class="card-body">
+							<div class="flex items-start justify-between gap-2">
+								<div>
+									<h3 class="font-semibold text-lg text-[#0a0a0a]">${escapeHtml(company.name)}</h3>
+									<p class="text-xs text-base-content/60">${escapeHtml(company.websiteUrl || "N/A")}</p>
+								</div>
+								<span class="badge rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+									${formatPercent(company.ghostingRatePercent)} ghosting
+								</span>
+							</div>
+							<div class="flex flex-wrap items-center gap-4 text-xs text-base-content/70">
+								<span><b>${company.reviewCount}</b> reviews</span>
+								<span><b>${formatDecimal(company.avgResponseDays)}</b>d avg response</span>
+								<span><b>${formatPercent(company.responseRatePercent)}</b> response rate</span>
+								<span><b>${formatPercent(company.positiveRatePercent)}</b> positive</span>
+								<span class="badge badge-sm">${escapeHtml(company.processLabel)}</span>
+							</div>
+							<div>
+								<button class="btn btn-sm btn-outline rounded-full normal-case" onclick="openReviewsForCompany(${company.id}, '${escapeJs(company.name)}')">
+									View process reviews
+								</button>
+							</div>
+						</div>
+					</article>
+				`;
+			}).join("");
+		}
+
+		async function openReviewsForCompany(companyId, companyName) {
+			reviewCompanyIdInput.value = companyId;
+			reviewsTitle.textContent = `Reviews: ${companyName}`;
+			reviewsList.innerHTML = "<p class='text-sm text-base-content/60'>Loading reviews...</p>";
+			reviewsModal.showModal();
+
+			try {
+				const response = await fetch(`/api/companies/${companyId}/reviews`);
+				if (!response.ok) {
+					throw new Error(`Failed to fetch reviews: ${response.status}`);
+				}
+				const reviews = await response.json();
+				renderReviews(reviews);
+			} catch (error) {
+				console.error(error);
+				reviewsList.innerHTML = "<p class='text-sm text-error'>Unable to load reviews.</p>";
+			}
+		}
+
+		window.openReviewsForCompany = openReviewsForCompany;
+
+		function renderReviews(reviews) {
+			if (!reviews.length) {
+				reviewsList.innerHTML = "<p class='text-sm text-base-content/60'>No reviews yet.</p>";
+				return;
+			}
+			reviewsList.innerHTML = reviews.map((review) => `
+				<div class="border rounded-lg p-3">
+					<div class="text-sm">
+						<strong>Rating:</strong> ${review.rating ?? "N/A"} / 5
+						<span class="ml-2"><strong>Ghosted:</strong> ${review.isGhosted ? "Yes" : "No"}</span>
+					</div>
+					<div class="text-sm mt-1">${escapeHtml(review.feedback || "")}</div>
+					<div class="text-xs text-base-content/60 mt-1">
+						Applied: ${review.applicationDate || "N/A"} | Last contact: ${review.lastContactDate || "N/A"}
+					</div>
+				</div>
+			`).join("");
+		}
+
+		function formatPercent(value) {
+			return `${Number(value || 0).toFixed(0)}%`;
+		}
+
+		function formatDecimal(value) {
+			return Number(value || 0).toFixed(1);
+		}
+
+		function escapeHtml(value) {
+			return String(value ?? "")
+				.replaceAll("&", "&amp;")
+				.replaceAll("<", "&lt;")
+				.replaceAll(">", "&gt;")
+				.replaceAll("\"", "&quot;")
+				.replaceAll("'", "&#39;");
+		}
+
+		function escapeJs(value) {
+			return String(value ?? "").replaceAll("\\", "\\\\").replaceAll("'", "\\'");
+		}
+	</script>
 </body>
 </html>
